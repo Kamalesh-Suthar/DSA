@@ -1,0 +1,58 @@
+// Method 1
+Brute force:
+	Sqaure each element and put it in a new array
+	T -> O(nlogn)
+	S -> O(n)
+
+	Good sorting is always O(nlogn)
+
+	Code:
+		def sortedSquaredArray(array):
+			n = len(array)
+
+			// Array of n length
+			res = [0]*n
+
+			for i in range(n):
+				res[i] = array[i] ** 2
+
+			res.sort()
+			return res
+
+
+// Method 2
+	// Largest squares will be at the extremes
+	Example: [-3, -1, 1, 9] -> [9, 1, 1, 81]
+
+	For example: [-3, 1, 2, 9] 
+	Looping 
+		Pointer 1 is at 0
+		Pointer 2 is at n-1
+		
+		Step 1: 9 < 81 -> [ , , ,81]
+		Step 2: 9 > 4 -> [ , , 9, 81]
+			Pointer 1 is at 2
+		Step 3: 4 > 1 -> [ , 4, 9, 81]
+			Pointer 1 is at 1
+		Step 4: Last element: [1, 4, 9, 81]
+
+	T -> O(n)
+	S -> O(n)
+
+	
+// Method 3
+	Point 2 vars to extreme indices of the array
+
+	n = len(array)
+	i,j = 0, n
+	res = [0]*n
+
+	for k in reversed(range(n)):
+		if array[i] ** 2 > array[j] ** 2
+			res[k]=array[i] ** 2
+			i += 1
+		else:
+			res[k]=array[j]**2
+			j -= 1
+
+	return res

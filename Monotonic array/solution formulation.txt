@@ -1,0 +1,24 @@
+An array is monotonic if it is either monotone increasing or monotone decreasing. An array is monotone increasing if all its elements from left to right are non-decreasing. An array is monotone decreasing if all its elements from left to right are non-increasing. Given an integer array return true if the given array is monotonic, or false otherwise.
+
+
+Clarify questions:
+Eg: Is empty array monotonic as well
+
+Test cases:
+	[1, 2, 3, 4] -> True (Monotonic Increasing)
+	[3, 2, 1] -> True (Monotonic Decreasing)
+	[1, 2, 2] -> True (Monotonic Increasing)
+	[3, 3, 3] -> True (Monotonic)
+
+
+Case 1: Non increasing: Previous element must be less or equal to the succeeding one
+Case 2: Non decreasing: Previous element must be greater or equal to the preceeding one
+
+	[3, ....., 7] -> Can be monotonic only if it is non decreasing
+	[3, ....., 3] -> Can be monotonic only if it is neither non increasing nor non increasing : All has to be same elements basically
+	[3, ....., -5] -> Can be monotonic only if it is non increasing
+
+
+Time Complexity is clealy going to be -> O(n)
+Space Complexity is constant space as no auxiliary space is being used -> O(1)
+
