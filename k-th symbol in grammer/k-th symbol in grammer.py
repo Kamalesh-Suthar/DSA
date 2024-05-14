@@ -14,3 +14,6 @@ def kth_synbol(n, k):
 		# return 1 - kth_synbol(n-1, k-mid)
 
 print(kth_synbol(4, 8)) # 0
+
+# Time complexity: O(n)
+# Space complexity: O(n)
